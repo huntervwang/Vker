@@ -1,20 +1,40 @@
 package com.weimob.vker;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
 
+@EActivity(R.layout.activity_main)
 public class MainActivity extends ActionBarActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Log.d("wanghuan"," -- oncreate -- ");
+    @ViewById(R.id.text1)
+    TextView  textView;
+
+    @ViewById(R.id.edittext1)
+    EditText editText;
+
+    @Click(R.id.click1)
+    void clickme(){
+//        textView.setText(editText.getText().toString());
+        startActivity(new Intent(this , TestActivity_.class));
     }
+
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+////        setContentView(R.layout.activity_main);
+//        Log.d("wanghuan"," -- oncreate -- ");
+//    }
 
 
     @Override
